@@ -1,12 +1,20 @@
 "use strict";
 
-let number1 = 5;
-let number2 = 4;
-
-alert(number1+number2);
-
-let result = +prompt("Введите ваш возраст:", "");
-
-if(result < 18) {
-    alert("Вам нет 18, сайт!");
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?");
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
+};
+let i = 0,
+    nameOfMovie,
+    ratingOfMovie;
+while(i < 2) {
+    nameOfMovie = prompt("Один из последних просмотренных фильмов?", '');
+    ratingOfMovie = prompt("На сколько оцените его?", '');
+    personalMovieDB.movies[nameOfMovie] = ratingOfMovie;
+    i++;
 }
+console.log(personalMovieDB);
